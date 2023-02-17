@@ -1,0 +1,52 @@
+Return Index of Array where Arr[i] == Target  
+
+    Approach 1) Using Normal Loop
+
+         class Solution {
+              public int search(int[] nums, int target) {
+               for(int i=0;i<nums.length;i++)
+                {
+                    if(nums[i]==target)
+                    {
+                        return i;
+                    }
+                }
+
+             return -1;
+
+             }
+          }
+
+     
+     2) Using Binary Search 
+
+           class Solution {
+
+             public int search(int[] nums, int target) {
+        
+                int li =0;
+
+                int hi = nums.length-1;
+
+                    while(li<=hi)
+                    {
+                        int mid = (li+hi)/2;
+
+                        if(nums[mid] == target)
+                        {
+                            return mid;
+                        }
+                        else if(nums[mid] < target)
+                        {
+                            li=mid+1;
+                        }
+                        else{
+                            hi= mid-1;
+                        }
+                    }
+
+                    return -1;
+
+
+                    }
+                }
