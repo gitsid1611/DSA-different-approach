@@ -1,0 +1,52 @@
+Q1 ) Two Sum 
+
+ Given  - Array , target 
+ find out  - the indexes of the two numbers which equals to target 
+
+
+Approach 1) Brute Force 
+
+     import java.util.*;
+
+    class Main{
+       public static void main(String[] args){
+             int[] nums ={2,7,11,15};
+             int target = 9;
+
+          for(int i=0;i<nums.length;i++){
+               for(int j=i+1;j<nums.length;j++){
+                  if(nums[i]+nums[j] == target){
+                     return i,j;
+                  }
+                   else{
+                       nums;
+                   }
+                  }
+                 }
+      }
+     }
+
+
+Approach 2 using Hashmap ;
+
+
+    class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+
+      for(int i=0 ;i<nums.length;i++){
+          int thor = target - nums[i];
+
+          if(map.containsKey(thor)){
+              return new int[]{ 
+                  map.get(thor),i
+                  };
+          }
+          map.put(nums[i],i);
+      }
+
+   return nums;
+    }
+}
